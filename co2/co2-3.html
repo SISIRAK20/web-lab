@@ -1,0 +1,179 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Reg Form</title>    
+    <style type="text/css">    
+        body{    
+            font-family: Calibri;    
+        }    
+        input[type="text"] {    
+            width: 250px;    
+        }    
+        input[type="submit"], input[type="reset"] {    
+            width: 77px;    
+            height: 27px;    
+            position: relative;left: 180px;    
+        }    
+        form{    
+            text-align: center;    
+            font-family: Calibri;    
+            font-size: 20px;    
+            border: 3px solid black;    
+            width: 600px;    
+            margin: 20px auto;    
+        }    
+        td {    
+            padding: 10px;    
+        }    
+        td:first-child {    
+            text-align: right;    
+            font-weight: bold;    
+        }    
+        td:last-child {    
+            text-align: left;    
+    
+    </style>    
+    <script>    
+        function validate() {    
+            var userid = document.reg_form.userid;    
+            var password = document.reg_form.password; 
+			var name=document.reg_form.name;
+            var address = document.reg_form.address;    
+            var country = document.reg_form.country; 
+			var zipcode = document.reg_form.zipcode; 
+            var email = document.reg_form.email;  
+			var gender = document.reg_form.gender; 
+            var lan = document.reg_form.lan;    
+             
+    
+            if (name.value.length <= 0) {    
+                alert("Name is required");    
+               name.focus();    
+                return false;    
+            }    
+            if (userid.value.length <= 0) {    
+                alert("user id must be integer");    
+                userid.focus();    
+                return false;    
+            }    
+            if (address.value.length <= 0) {    
+                alert("Address is required");    
+                address.focus();    
+                return false;    
+            }    
+            if (gender.value.length <= 0) {    
+                alert("Gender is required");    
+                gender.focus();    
+                return false;    
+            }    
+            if (email.value.length <= 0) {    
+                alert("Email Id is required");    
+                email.focus();    
+                return false;    
+            }    
+            if (password.value.length <= 0) {    
+                alert("password number is required");    
+                password.focus();    
+                return false;    
+            }    
+            if (country.value == "select value") {    
+                alert("country is required");    
+                country.focus();    
+                return false;    
+            }    
+			if (zipcode.value.length <=0) {    
+                alert("zipcode is required");    
+                zipcode.focus();    
+                return false;    
+            }    
+			if (lan.value == "select lan") {    
+                alert("lan is required");    
+                lan.focus();    
+                return false;    
+            }    
+            return false;    
+        }    
+    </script>    
+</head>    
+<body>    
+       
+    <hr>    
+    <form method="" action="" name="reg_form" onsubmit="return validate()">    
+        <h2>Registration Form</h2>    
+        <table>    
+            <tr>    
+                <td><label>user id </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="user id">    
+                </td>    
+            </tr>    
+			<tr>    
+                <td><label>name </label></td>    
+                <td>    
+                    <input type="text" name="fname" placeholder="Name">    
+                </td>    
+            </tr>    
+			
+            <tr>    
+                <td><label>password </label></td>    
+                <td>    
+                    <input type="password" name="lname" placeholder="password">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Address: </label></td>    
+                <td>    
+                    <input type="textarea" size="50" name="address" placeholder="Address">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" name="gender" value="male">Male    
+                    <input type="radio" name="gender" value="femele">Female    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" placeholder="example@gmail.com">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>language </label></td>    
+                <td>    
+                    <select>  
+					<option value="select lan">select lan</option>    
+                        <option value="HTML">eng</option>    
+                        <option value="CSS">mal</option>    
+                        <option value="JavaScript">hindi</option>
+                </td>    
+            </tr>    
+            <tr>    
+            <td><label>Country </label></td>    
+                <td>    
+                    <select name="course">    
+                        <option value="select course">select country</option>    
+                        <option value="HTML">india</option>    
+                        <option value="CSS">CSS</option>    
+                        <option value="JavaScript">ua</option>    
+                        <option value="Java">uk</option>    
+                    </select>    
+                </td>    
+            </tr>  
+
+<tr><td><label>zipcode </label></td> <td>
+ <input type="number" size="50" name="code" placeholder="zip">
+
+</td>
+			
+            <tr>    
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+</body>    
+</html>     
